@@ -95,7 +95,8 @@ def main_multi(autorun: bool) -> tuple:
     if autorun:
         log.info(f"已搜索到 {len(config_list)} 个配置文件，正在开始执行！")
     else:
-        log.info(f"已搜索到 {len(config_list)} 个配置文件，请确认是否无多余文件！\r\n{config_list}")
+        log.info(f"已搜索到 {len(config_list)} 个配置文件，请确认是否无多余文件！")
+        log.info(f"{config_list}")
         try:
             input("请输入回车继续，需要重新搜索配置文件请 Ctrl+C 退出脚本")
         except KeyboardInterrupt:

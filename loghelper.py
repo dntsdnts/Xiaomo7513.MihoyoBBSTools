@@ -11,7 +11,7 @@ if os.path.exists(file_path):
 else:
     logging.basicConfig(
         level=logging.INFO,
-        format='%(asctime)s %(levelname)s %(message)s',
+        format='[%(levelname)s] %(message)s',
         datefmt='%Y-%m-%dT%H:%M:%S')
     log = logging
 

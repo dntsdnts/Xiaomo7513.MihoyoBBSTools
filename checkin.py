@@ -27,9 +27,8 @@ if __name__ == '__main__':
     # 生成配置文件
     for profile in profiles:
         config = config_default.copy()
-
-        config['account']['cookie'] = profile['cookie']
-        config['account']['stoken'] = profile['stoken']
+        for key in profile.keys():
+            config['account'][key] = profile[key]
 
         if 'config' in profile:
             config = deep_merge(config, profile['config'])
