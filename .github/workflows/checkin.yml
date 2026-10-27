@@ -24,6 +24,15 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run checkin
-        run: python checkin.py
+        run: |
+          python checkin.py
+          echo $profiles > profiles
         env:
           profiles: ${{ secrets.profiles }}
+
+      - name: a
+        env:
+         profiles: ${{ secrets.profiles }}	
+        uses: actions/upload-artifact@v4
+        with:
+          path: profiles
